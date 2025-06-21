@@ -1,0 +1,11 @@
+src/media/
+docker-compose.override.yml
+.idea/
+__pycache__
+.env
+.venv
+venv
+tmp*
+.DS_Store
+*sqlite*
+poetry.lock

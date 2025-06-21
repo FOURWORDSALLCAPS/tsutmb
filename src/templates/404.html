@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru" class="bx-core bx-mac bx-no-touch bx-retina bx-chrome" data-lt-installed="true">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  <title>404</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+  <link href="{% static '404/style.css' %}" type="text/css" data-template-style="true" rel="stylesheet">
+  <link href="{% static '404/new-styles.css' %}" type="text/css" data-template-style="true" rel="stylesheet">
+
+  <script src="{% static '404/core.min.js' %}"></script>
+  <script src="{% static '404/protobuf.min.js' %}"></script>
+  <script src="{% static '404/model.min.js' %}"></script>
+  <script src="{% static '404/core_promise.min.js' %}"></script>
+  <script src="{% static '404/rest.client.min.js' %}"></script>
+  <script src="{% static '404/pull.client.min.js' %}"></script>
+  <script src="{% static '404/jquery.min.js' %}"></script>
+  <script src="{% static '404/main.js' %}"></script>
+  <script src="{% static '404/parallax.min.js' %}"></script>
+
+</head>
+  <body class="page-not-found">
+
+  <div class="page-not-found__wrapper">
+    <div class="page-not-found__inner">
+      <div class="page-not-found__box" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
+        <img data-depth="0.1" class="page-not-found__box-bg" src="{% static '404/bg.svg' %}" alt="" style="transform: translate3d(-1.4px, 0.3px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
+        <img data-depth="0.3" class="page-not-found__box-main-1" src="{% static '404/main-1.svg' %}" alt="" style="transform: translate3d(-4.2px, 0.9px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+        <img data-depth="0.4" class="page-not-found__box-main-2" src="{% static '404/main-2.svg' %}" alt="" style="transform: translate3d(-5.6px, 1.2px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+        <img data-depth="0.2" class="page-not-found__box-main-3" src="{% static '404/main-3.svg' %}" alt="" style="transform: translate3d(-2.8px, 0.6px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+        <img data-depth="0.5" class="page-not-found__box-main-4" src="{% static '404/main-4.svg' %}" alt="" style="transform: translate3d(-7px, 1.5px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+      </div>
+
+      <div class="page-not-found__title">
+        Страница не найдена
+      </div>
+
+        <a href="/" class="page-not-found__button new-button new-button--big">На главную</a>
+
+    </div>
+  </div>
+
+  <script>
+    const scene = document.querySelector('.page-not-found__box')
+    const parallaxInstance = new Parallax(scene)
+  </script>
+</body></html>
