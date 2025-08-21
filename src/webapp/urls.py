@@ -16,14 +16,12 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.shortcuts import redirect
 from django.conf import settings
-from django.urls import path
-
+from django.urls import path, include
 
 urlpatterns = [
-    path("", lambda request: redirect("admin:index")),
     path("admin/", admin.site.urls),
+    path('', include('tgu.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = "tgu.views.view_404"

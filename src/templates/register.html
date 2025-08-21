@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'login/css/tgu.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'login/assets/2b564f1b/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/main.css' %}">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="content" id="content-main">
+            <div class="container">
+                <div class="site-index content">
+                    <div class="body-content">
+                        <div class="site-login">
+                            <div id="logos" class="col-xs-12 text-center" style="padding: 25px;">
+                                <div class="preloader-wrapper">
+                                    <span id="rotag" class="preloader-s"></span>
+                                        <img src="{% static 'login/img/playlogo.svg' %}" id="playlogo" style="height: 180px;width: 180px;position: relative; top: 45px; display: inline-block; visibility: visible; animation-delay: .1s; animation-duration: 1.5s; ">
+                                </div>
+                            </div>
+                            <div class="row" id="login">
+                                <div class="form-group d-flex flex-row flex-wrap justify-content-between col-lg-10 offset-lg-1 col-sm-12">
+                                    <h4 style="border-bottom: 2px #e7c782 solid;">Регистрация</h4>
+                                </div>
+                                <div class="col-lg-10 offset-lg-1 col-sm-12">
+                                    <form id="register-form" class="form-vertical kv-form-bs4" method="post" role="form">
+                                        {% csrf_token %}
+
+                                            <div class="form-group highlight-addon field-registerform-username required">
+                                                <label class="has-star" for="registerform-username">{{ form.username.label }}</label>
+                                                {{ form.username }}
+                                                {% if form.username.errors %}
+                                                <div class="text-danger">
+                                                    {% for error in form.username.errors %}
+                                                        {{ error }}<br>
+                                                    {% endfor %}
+                                                </div>
+                                                {% endif %}
+                                            </div>
+
+                                            <div class="form-group highlight-addon field-registerform-email required">
+                                                <label class="has-star" for="registerform-email">{{ form.email.label }}</label>
+                                                {{ form.email }}
+                                                {% if form.email.errors %}
+                                                <div class="text-danger">
+                                                    {% for error in form.email.errors %}
+                                                        {{ error }}<br>
+                                                    {% endfor %}
+                                                </div>
+                                                {% endif %}
+                                            </div>
+
+                                            <div class="form-group highlight-addon field-registerform-password1 required">
+                                                <label class="has-star" for="registerform-password1">{{ form.password1.label }}</label>
+                                                {{ form.password1 }}
+                                                {% if form.password1.errors %}
+                                                <div class="text-danger">
+                                                    {% for error in form.password1.errors %}
+                                                        {{ error }}<br>
+                                                    {% endfor %}
+                                                </div>
+                                                {% endif %}
+                                            </div>
+
+                                            <div class="form-group highlight-addon field-registerform-password2 required">
+                                                <label class="has-star" for="registerform-password2">{{ form.password2.label }}</label>
+                                                {{ form.password2 }}
+                                                {% if form.password2.errors %}
+                                                <div class="text-danger">
+                                                    {% for error in form.password2.errors %}
+                                                        {{ error }}<br>
+                                                    {% endfor %}
+                                                </div>
+                                                {% endif %}
+                                            </div>
+
+                                        <div class="form-group d-flex justify-content-between">
+                                            <button type="submit" class="btn btn-primary font-weight-bold my-auto w-100">
+                                                Зарегистрироваться
+                                            </button>
+                                        </div>
+                                        <div class="form-group d-flex justify-content-between">
+                                            <a href="{% url 'tgu:view_login' %}" class="btn btn-primary font-weight-bold my-auto w-100">
+                                                Уже есть аккаунт? Войти
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'login/js/axios.min.js' %}"></script>
+</body>
+</html>

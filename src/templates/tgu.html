@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Державинский университет | ТГУ имени Г.Р. Державина</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="{% static 'tgu/css/style.css' %}" type="text/css" data-template-style="true" rel="stylesheet">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<a href="/" class="header__logo"><img src="{% static 'tgu/img/logo.svg' %}" height="53px" alt="logo"></a>
+		</div>
+		<div class="menu__body__top">
+		</div>
+		<div class="user-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="white">
+                <g>
+                    <g>
+                        <g>
+                            <path d="M3.46 2.765a2.765 2.765 0 1 1 5.53 0 2.765 2.765 0 0 1-5.53 0zm2.77-1.383a1.387 1.387 0 1 0 0 2.775 1.387 1.387 0 0 0 0-2.775z"></path>
+                        </g>
+                        <g>
+                            <path d="M2.949 7.56c1.204-.462 2.498-.65 3.272-.65.774 0 2.068.188 3.272.65 1.175.453 2.466 1.246 2.913 2.587a.691.691 0 0 1 0 .438c-.432 1.296-1.496 2.104-2.636 2.579-1.142.476-2.447.658-3.55.658-1.101 0-2.406-.182-3.548-.658-1.14-.475-2.204-1.283-2.637-2.58a.691.691 0 0 1 0-.437c.447-1.34 1.739-2.134 2.914-2.586zm-1.514 2.811c.304.665.927 1.166 1.768 1.517.932.388 2.046.552 3.018.552.971 0 2.086-.164 3.017-.552.842-.35 1.464-.852 1.768-1.517-.313-.634-1.044-1.149-2.01-1.52-1.042-.4-2.167-.559-2.775-.559-.608 0-1.734.158-2.776.56-.965.37-1.696.885-2.01 1.52z"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="user-actions">
+			{% if user.is_authenticated %}
+				<span class="action-btn btn-primary">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+					</svg>
+					{{ user.username }}
+				</span>
+
+				<a href="{% url 'tgu:view_logout' %}" class="action-btn btn-secondary">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.59L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+					</svg>
+					Выйти
+				</a>
+			{% else %}
+				<a href="{% url 'tgu:view_login' %}" class="action-btn btn-secondary">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.59L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+					</svg>
+					Личный кабинет
+				</a>
+			{% endif %}
+        </div>
+	</header>
+  </body>
+</html>
