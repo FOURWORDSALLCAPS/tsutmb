@@ -18,6 +18,7 @@ cd tsutmb
 ```sh
 python -m venv venv
 ```
+
 Активируйте его. На разных операционных системах это делается разными командами:
 
 - Windows: `.\venv\Scripts\activate`
@@ -31,6 +32,11 @@ pip install poetry
 
 ```sh
 poetry install
+```
+
+Перейдите в каталог src:
+```sh
+cd src
 ```
 
 Создать .env файл по образцу
@@ -52,3 +58,17 @@ python manage.py collectstatic
 ```sh
 python manage.py runserver
 ```
+
+Создайте учетную запись администратора:
+```sh
+chmod +x entrypoint.sh
+./entrypoint.sh
+```
+
+Админ панель находится [тут](http://127.0.0.1:8000/admin)
+
+# Python версия
+В проекте используется `3.13`
+
+# Автор
+(2025) Vladimir Zaitsev
